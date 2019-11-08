@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+<body>
+    
+    <div class="container mt-5 pt-5">
+        <div class="row">
+            <div class="col-12">
+                    <div id="nusrat-app">
+                            <input type="text" class="form-control" v-model="value"> -->
+                            
+                            <textarea name="" class="form-control" v-model="value"></textarea> -->
+
+                           <input type="checkbox" v-model="value"> is nusrat a developer? <br> -->
+
+                            
+                            <input type="checkbox" name="name" id="barling" value="Barling" v-model="value">Barling<br>
+                            <input type="checkbox" name="name" id="barling" value="Torrento" v-model="value">Torrento<br>
+                            <input type="checkbox" name="name" id="nyrobi" value="Nyrobi" v-model="value">Nyrobi<br> -->
+
+                            <input type="radio" name="" id="" value="Nusrat" v-model="value"> Nusrat <br>
+                            <input type="radio" name="" id="" value="Labonno" v-model="value"> Labonno <br> -->
+
+                            <select name="" id="" v-model="value">
+                                <option disabled value="">Please select...</option>
+                                <option  v-for="option in options" v-bind:value="option.people" >{{  option.text }}</option>
+                            </select>
+
+                            <h2>People: {{ value }} </h2>
+                    </div>
+            </div>
+        </div>
+    </div>
+<!-- 
+ekane notun 2 ta directive amara use korci 
+ eta ?v-for (loop diye data anar jonne)
+#v-bind ( kono html tag a attribute add korar jonne deken amra kono value name kichu nei nai v-bind:value diye amra vue.js diye value attribute add korci..)
+
+kicu bujlen?hmm -->
+
+<!-- value jodi true hoy checkbox er jonne tokon oita checked dekabe r jodi false hoy then uncehcked dekabe -->
+<!-- 1 == true 
+0 == false 
+ok?ok thakuk -->
+<!-- note: vuejs er v-model directive diye two way data binding kora jay. ekta moja dekene -->
+<!-- amra ekon jeta kortechi eta k bole form input binding (playing) -->
+
+<!-- ekon jodi amader onnek gulo checkbox theke jta theke amder data gulo collect korte hobe... seta ekon dekbo  -->
+
+<!-- ekon dekbo ki vabe dyanimic conent loop er maddome add kora jay ok?ok -->
+
+<!-- learnt: 
+
+# input , checkbox, radio, textarea, select
+# vue.js directive {v-model,v-bind, v-for} -->
+<!-- v-for directive data loop kore anar jonne or loop songkarnto kaj korar jonne 
+for loop
+while loop
+foreach loop 
+
+
+so vue.js diye shohojei form input value niye khela jay.. hm
+
+ajker practice er link: 
+https://vuejs.org/v2/guide/forms.html -->
+
+
+
+<script>
+   var app = new Vue({
+        el: '#nusrat-app',
+        data: {
+            value : '',
+            options: [
+               {text: 'Dhaka', people: '50 million'},
+               {text: 'Cumilla', people: '30 million'},
+               {text: 'Khulna', people: '10 million'},
+               {text: 'Chittgong', people: '150 million'},
+               {text: 'Barishal', people: '35 million'},
+            ]
+        }
+      })
+
+</script>
+</body>
+</html>
